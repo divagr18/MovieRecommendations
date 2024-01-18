@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Recommendations{% endblock %}
+
+{% block content %}
+  <h1>Movie Recommendations</h1>
+
+  {% if user_id %}
+    <h2>Recommendations for User {{ user_id }}</h2>
+    <ul id="recommendationList">
+      {% for recommendation in recommendations %}
+        <li>{{ recommendation }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No user ID provided.</p>
+  {% endif %}
+{% endblock %}

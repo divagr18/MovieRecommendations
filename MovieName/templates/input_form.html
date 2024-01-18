@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Input Form{% endblock %}
+
+{% block content %}
+  <h1>Movie Recommendations</h1>
+
+  <form method="post" action="{% url 'get_movie_recommendations' %}">
+    {% csrf_token %}
+    <label for="user_id">Enter User ID:</label>
+    <input type="text" id="user_id" name="user_id" required>
+    <br>
+    <input type="submit" value="Get Recommendations">
+  </form>
+{% endblock %}
